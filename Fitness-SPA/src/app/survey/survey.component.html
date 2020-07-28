@@ -1,28 +1,91 @@
-<section class="fdb-block">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <h6>Find the best diet and work-out plan suitables or you.</h6>
-            </div>
-        </div>
-
-        <div class="row pt-5 justify-content-center align-items-center">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">Female</a>
-                    </div>
+<div class="row">
+    <div class="col text-center">
+        <h1>Find the best diet and work-out plan suitables or you.</h1>
+    </div>
+</div>
+<div class="container" *ngIf="!model.change">
+    <div class="row pt-5 justify-content-center align-items-center">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <a href="#" (click)="hasLanded()" class="btn btn-primary">Female</a>
                 </div>
             </div>
-            <div class="col-4 offset-1">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">Male</a>
-                    </div>
+        </div>
+        <div class="col-4 offset-1">
+            <div class="card" style="width: 18rem;">
+                <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <a href="#" (click)="hasLanded()" class="btn btn-primary">Male</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<br>
+<br>
+<br>
+<div class="container" *ngIf="model.change == true">
+    <div class="pt-2 justify-content-center align-items-center">
+        <form #surveyForm="ngForm" (ngSubmit)="calculate()">
+            <div class="form-group row">
+                <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="inputAge" id="inputAge" [(ngModel)]="model.age" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputAge" class="col-sm-2 col-form-label">Height</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="inputHeight" id="inputHeight" [(ngModel)]="model.height" />
+                </div>
+            </div>
+
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Units</legend>
+                    <div class="col-sm-8">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="unit" id="meter" value="m" [(ngModel)]="model.meters" checked />
+                            <label class="form-check-label" for="meter">
+                                Metres
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="unit" id="inches" value="i" [(ngModel)]="model.inches" />
+                            <label class="form-check-label" for="inches">
+                                Inch
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group row">
+                <label for="inputAge" class="col-sm-2 col-form-label">Weight in /Kg</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="inputWeight" id="inputWeight" [(ngModel)]="model.weight" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputActivityLevel" class="col-sm-2 col-form-label">Activity Level</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="inputActivityLevel" [(ngModel)]="model.activityLevel" id="inputActivityLevel">
+                        <option value="1">Sedentary</option>
+                        <option value="2">Lightly Active</option>
+                        <option value="3">Moderate Active</option>
+                        <option value="4">Very Active</option>
+                        <option value="5">Extremely Active</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-8">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

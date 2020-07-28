@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent implements OnInit {
+  model: any = {};
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  calculate(){
+
+    console.log(this.model);
+  }
+
+  hasLanded(){
+    this.model.change = true;
+  }
 }
