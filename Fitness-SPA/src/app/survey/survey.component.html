@@ -5,16 +5,16 @@
 </div>
 <div class="container" *ngIf="!model.change">
     <div class="row pt-5 justify-content-center align-items-center">
-        <div class="col-4 ">
-            <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
+        <div class="col-4">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Female</a>
                 </div>
             </div>
         </div>
-        <div class="col-4 offset-1">
-            <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
+        <div class="col-4">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Male</a>
@@ -24,11 +24,9 @@
     </div>
 </div>
 <br>
-<br>
-<br>
 <div class="container" *ngIf="model.change == true">
-    <form class="shadow-sm p-3 mb-5 bg-white rounded col-sm-6" #surveyForm="ngForm" (ngSubmit)="calculate()">
-        <div class="justify-content-center align-items-center container">
+    <form class="shadow p-3 mb-5 bg-white rounded col-sm-6 offset-sm-3" #surveyForm="ngForm" (ngSubmit)="calculate()">
+        <div class="pt-3 justify-content-center align-items-center container">
             <div class="form-group row">
                 <label for="inputAge" class="col-sm-4 col-form-label">Age</label>
                 <div class="col-sm">
@@ -88,28 +86,4 @@
             </div>
         </div>
     </form>
-</div>
-<div class="container">
-    <div class="row featurette">
-        <div class="col-sm-9 embed-responsive embed-responsive-21by9">
-            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw " allowfullscreen></iframe>
-        </div>
-
-        <div class="col-sm card text-center shadow-sm p-3 mb-5 bg-white rounded " style="width: 28rem; ">
-            <div class="card-body text-primary ">
-                <h2 class="card-title ">Your daily Macros</h2>
-            </div>
-            <ul class="list-group list-group-flush ">
-                <li class="list-group-item ">
-                    <b>CARBOHYDRATES: &nbsp;&nbsp;20%</b></li>
-                <li class="list-group-item ">
-                    <b>PROTEIN: &nbsp;&nbsp;20%</b></li>
-                <li class="list-group-item ">
-                    <b>FAT: &nbsp;&nbsp;20%</b>
-                </li>
-                <li class="list-group-item ">
-                    <b>ACTIVITY: &nbsp;&nbsp;20%</b></li>
-            </ul>
-        </div>
-    </div>
 </div>

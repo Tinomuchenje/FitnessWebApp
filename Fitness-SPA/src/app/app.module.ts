@@ -5,12 +5,14 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SurveyComponent } from './survey/survey.component';
+import { WorkoutGoalComponent } from './workout-goal/workout-goal.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavbarComponent,
-      SurveyComponent
+      SurveyComponent,
+      WorkoutGoalComponent
    ],
    imports: [
       BrowserModule,
