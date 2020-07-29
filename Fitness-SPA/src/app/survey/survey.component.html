@@ -5,8 +5,8 @@
 </div>
 <div class="container" *ngIf="!model.change">
     <div class="row pt-5 justify-content-center align-items-center">
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-4 ">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Female</a>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="col-4 offset-1">
-            <div class="card" style="width: 18rem;">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Male</a>
@@ -27,25 +27,25 @@
 <br>
 <br>
 <div class="container" *ngIf="model.change == true">
-    <div class="justify-content-center align-items-center">
-        <form #surveyForm="ngForm" (ngSubmit)="calculate()">
+    <form class="shadow-sm p-3 mb-5 bg-white rounded col-sm-6" #surveyForm="ngForm" (ngSubmit)="calculate()">
+        <div class="justify-content-center align-items-center container">
             <div class="form-group row">
-                <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
-                <div class="col-sm-4">
+                <label for="inputAge" class="col-sm-4 col-form-label">Age</label>
+                <div class="col-sm">
                     <input type="number" class="form-control" name="inputAge" id="inputAge" [(ngModel)]="model.age" />
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputAge" class="col-sm-2 col-form-label">Height</label>
-                <div class="col-sm-4">
+                <label for="inputAge" class="col-sm-4 col-form-label">Height</label>
+                <div class="col-sm">
                     <input type="number" class="form-control" name="inputHeight" id="inputHeight" [(ngModel)]="model.height" />
                 </div>
             </div>
 
             <fieldset class="form-group">
                 <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Units</legend>
-                    <div class="col-sm-4">
+                    <legend class="col-form-label col-sm-4 pt-0">Units</legend>
+                    <div class="col-sm">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="unit" id="meter" value="m" [(ngModel)]="model.meters" checked />
                             <label class="form-check-label" for="meter">
@@ -63,15 +63,15 @@
             </fieldset>
 
             <div class="form-group row">
-                <label for="inputAge" class="col-sm-2 col-form-label">Weight in /Kg</label>
-                <div class="col-sm-4">
+                <label for="inputAge" class="col-sm-4 col-form-label">Weight in /Kg</label>
+                <div class="col-sm">
                     <input type="number" class="form-control" name="inputWeight" id="inputWeight" [(ngModel)]="model.weight" />
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="inputActivityLevel" class="col-sm-2 col-form-label">Activity Level</label>
-                <div class="col-sm-4">
+                <label for="inputActivityLevel" class="col-sm-4 col-form-label">Activity Level</label>
+                <div class="col-sm">
                     <select class="form-control" name="inputActivityLevel" [(ngModel)]="model.activityLevel" id="inputActivityLevel">
                         <option value="1">Sedentary</option>
                         <option value="2">Lightly Active</option>
@@ -82,10 +82,34 @@
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-2 offset-sm-5">
+                <div class="col-sm-6 offset-sm-10">
                     <button type="submit" class="btn btn-primary">Next</button>
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <div class="row featurette">
+        <div class="col-sm-9 embed-responsive embed-responsive-21by9">
+            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw " allowfullscreen></iframe>
+        </div>
+
+        <div class="col-sm card text-center shadow-sm p-3 mb-5 bg-white rounded " style="width: 28rem; ">
+            <div class="card-body text-primary ">
+                <h2 class="card-title ">Your daily Macros</h2>
+            </div>
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item ">
+                    <b>CARBOHYDRATES: &nbsp;&nbsp;20%</b></li>
+                <li class="list-group-item ">
+                    <b>PROTEIN: &nbsp;&nbsp;20%</b></li>
+                <li class="list-group-item ">
+                    <b>FAT: &nbsp;&nbsp;20%</b>
+                </li>
+                <li class="list-group-item ">
+                    <b>ACTIVITY: &nbsp;&nbsp;20%</b></li>
+            </ul>
+        </div>
     </div>
 </div>
