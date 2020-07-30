@@ -9,7 +9,7 @@
             <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
-                    <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Female</a>
+                    <a href="#" (click)="hasLanded('female')" class="btn btn-primary btn-block">Female</a>
                 </div>
             </div>
         </div>
@@ -17,26 +17,26 @@
             <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                 <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
-                    <a href="#" (click)="hasLanded()" class="btn btn-primary btn-block">Male</a>
+                    <a href="#" (click)="hasLanded('male')" class="btn btn-primary btn-block">Male</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br>
-<div class="container" *ngIf="model.change == true">
-    <form class="shadow p-3 mb-5 bg-white rounded col-sm-6 offset-sm-3" #surveyForm="ngForm" (ngSubmit)="calculate()">
+<div class="container" *ngIf="model.change == true && model.goal == false">
+    <form name="surveForm" class=" shadow p-3 mb-5 bg-white rounded col-sm-6 offset-sm-3" #surveyForm="ngForm" (ngSubmit)="calculate()">
         <div class="pt-3 justify-content-center align-items-center container">
             <div class="form-group row">
                 <label for="inputAge" class="col-sm-4 col-form-label">Age</label>
                 <div class="col-sm">
-                    <input type="number" class="form-control" name="inputAge" id="inputAge" [(ngModel)]="model.age" />
+                    <input type="number" class="form-control" name="inputAge" id="inputAge" required [(ngModel)]="model.age" />
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputAge" class="col-sm-4 col-form-label">Height</label>
+                <label for="inputHeight" class="col-sm-4 col-form-label">Height</label>
                 <div class="col-sm">
-                    <input type="number" class="form-control" name="inputHeight" id="inputHeight" [(ngModel)]="model.height" />
+                    <input type="number" class="form-control" name="inputHeight" id="inputHeight" required [(ngModel)]="model.height" />
                 </div>
             </div>
 
@@ -45,14 +45,14 @@
                     <legend class="col-form-label col-sm-4 pt-0">Units</legend>
                     <div class="col-sm">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="unit" id="meter" value="m" [(ngModel)]="model.meters" checked />
-                            <label class="form-check-label" for="meter">
+                            <input class="form-check-input" type="radio" name="meters" id="meters" value="m" required [(ngModel)]="model.meters" checked />
+                            <label for="meters" class="form-check-label" for="meter">
                                 Metres
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="unit" id="inches" value="i" [(ngModel)]="model.inches" />
-                            <label class="form-check-label" for="inches">
+                            <input class="form-check-input" type="radio" name="meters" id="inches" value="i" required [(ngModel)]="model.inches" />
+                            <label for="inches" class="form-check-label">
                                 Inch
                             </label>
                         </div>
@@ -61,21 +61,21 @@
             </fieldset>
 
             <div class="form-group row">
-                <label for="inputAge" class="col-sm-4 col-form-label">Weight in /Kg</label>
+                <label for="inputWeight" class="col-sm-4 col-form-label">Weight in /Kg</label>
                 <div class="col-sm">
-                    <input type="number" class="form-control" name="inputWeight" id="inputWeight" [(ngModel)]="model.weight" />
+                    <input type="number" class="form-control" name="inputWeight" id="inputWeight" required [(ngModel)]="model.weight" />
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputActivityLevel" class="col-sm-4 col-form-label">Activity Level</label>
                 <div class="col-sm">
-                    <select class="form-control" name="inputActivityLevel" [(ngModel)]="model.activityLevel" id="inputActivityLevel">
-                        <option value="1">Sedentary</option>
-                        <option value="2">Lightly Active</option>
-                        <option value="3">Moderate Active</option>
-                        <option value="4">Very Active</option>
-                        <option value="5">Extremely Active</option>
+                    <select class="form-control" name="inputActivityLevel" [(ngModel)]="model.activityLevel" required id="inputActivityLevel">
+                        <option value=1.2>Sedentary</option>
+                        <option value=1.325>Lightly Active</option>
+                        <option value=1.55>Moderate Active</option>
+                        <option value=1.725>Very Active</option>
+                        <option value=1.9>Extremely Active</option>
                     </select>
                 </div>
             </div>
@@ -86,4 +86,28 @@
             </div>
         </div>
     </form>
+</div>
+
+<div *ngIf="model.goal == true" class="container">
+    <div class="row featurette">
+        <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw " allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<div *ngIf="model.goal == true" class="container">
+    <div class="card offset-sm-4 text-center shadow-sm p-3 mb-5 bg-white rounded" style="width: 28rem; ">
+        <div class="card-body text-primary">
+            <h2 class="card-title ">Your daily Macros</h2>
+        </div>
+        <ul class="list-group list-group-flush ">
+            <li class="list-group-item ">
+                <b>CARBOHYDRATES: &nbsp;&nbsp; {{model.carbohydrates}} %</b></li>
+            <li class="list-group-item ">
+                <b>PROTEIN: &nbsp;&nbsp; {{model.protein}} %  </b></li>
+            <li class="list-group-item ">
+                <b>FAT: &nbsp;&nbsp; {{model.fat}} %</b>
+            </li>
+        </ul>
+    </div>
 </div>
