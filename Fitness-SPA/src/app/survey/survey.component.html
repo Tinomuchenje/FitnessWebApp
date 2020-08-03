@@ -87,27 +87,6 @@
         </div>
     </form>
 </div>
-
-<div *ngIf="model.goal == true" class="container">
-    <div class="row featurette">
-        <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw " allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-<div *ngIf="model.goal == true" class="container">
-    <div class="card offset-sm-4 text-center shadow-sm p-3 mb-5 bg-white rounded" style="width: 28rem; ">
-        <div class="card-body text-primary">
-            <h2 class="card-title ">Your daily Macros</h2>
-        </div>
-        <ul class="list-group list-group-flush ">
-            <li class="list-group-item ">
-                <b>CARBOHYDRATES: &nbsp;&nbsp; {{model.carbohydrates}} %</b></li>
-            <li class="list-group-item ">
-                <b>PROTEIN: &nbsp;&nbsp; {{model.protein}} %  </b></li>
-            <li class="list-group-item ">
-                <b>FAT: &nbsp;&nbsp; {{model.fat}} %</b>
-            </li>
-        </ul>
-    </div>
+<div *ngIf="model.goal == true">
+    <app-workout-goal [values]="model"></app-workout-goal>
 </div>
