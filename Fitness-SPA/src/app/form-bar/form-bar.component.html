@@ -1,0 +1,33 @@
+<div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+        <div class="liner"></div>
+
+        <!-- circular user icon -->
+        <li>
+            <a routerLink="/sex" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="sex">
+                <span class="round-tabs one">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+            </a>
+        </li>
+
+        <!-- circular tasks icon -->
+        <li>
+            <a routerLink="/age" routerLinkActive="active" data-toggle="tab" title="age">
+                <span class="round-tabs two">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                </span>
+            </a>
+        </li>
+
+        <!-- circular home icon -->
+        <li>
+            <a routerLink="/weight" routerLinkActive="active" data-toggle="tab" title="weight">
+                <span class="round-tabs three">
+                    <i class="glyphicon glyphicon-home"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+</div>

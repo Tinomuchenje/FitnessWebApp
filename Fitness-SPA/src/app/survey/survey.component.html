@@ -1,92 +1,18 @@
-<div class="row">
-    <div class="col pt-5 text-primary text-center">
-        <h1>Find the best diet and work-out plan suitables or you.</h1>
+<section style="background:#efefe9;">
+    <div class="container">
+        <div class="board">
+            <!-- Navigation Area (Circular Tabs) -->
+            <app-form-bar></app-form-bar>
+            <!-- End Navigation Area (Circular Tabs) -->
+            <!-- Content Area -->
+            <div class="tab-content">
+                <!-- Routed view  -->
+                <router-outlet></router-outlet>
+            </div>
+            <!-- End Content Area -->
+        </div>
+
+        <!-- For Debugging: show our formData as it is being typed -->
+        <pre>{{ formData | json }}</pre>
     </div>
-</div>
-<div class="container" *ngIf="!model.change">
-    <div class="row pt-5 justify-content-center align-items-center">
-        <div class="col-4">
-            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <a href="#" (click)="hasLanded('female')" class="btn btn-primary btn-block">Female</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                <img src="https://i.pinimg.com/originals/4f/b1/c6/4fb1c66ce9192bbcfbd4465a8f5b86c0.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <a href="#" (click)="hasLanded('male')" class="btn btn-primary btn-block">Male</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<div class="container" *ngIf="model.change == true && model.goal == false">
-    <form name="surveForm" class=" shadow p-3 mb-5 bg-white rounded col-sm-6 offset-sm-3" #surveyForm="ngForm" (ngSubmit)="calculate()">
-        <div class="pt-3 justify-content-center align-items-center container">
-            <div class="form-group row">
-                <label for="inputAge" class="col-sm-4 col-form-label">Age</label>
-                <div class="col-sm">
-                    <input type="number" class="form-control" name="inputAge" id="inputAge" required [(ngModel)]="model.age" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputHeight" class="col-sm-4 col-form-label">Height</label>
-                <div class="col-sm">
-                    <input type="number" class="form-control" name="inputHeight" id="inputHeight" required [(ngModel)]="model.height" />
-                </div>
-            </div>
-
-            <fieldset class="form-group">
-                <div class="row">
-                    <legend class="col-form-label col-sm-4 pt-0">Units</legend>
-                    <div class="col-sm">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="meters" id="meters" value="m" required [(ngModel)]="model.meters" checked />
-                            <label for="meters" class="form-check-label" for="meter">
-                                Metres
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="meters" id="inches" value="i" required [(ngModel)]="model.inches" />
-                            <label for="inches" class="form-check-label">
-                                Inch
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-            <div class="form-group row">
-                <label for="inputWeight" class="col-sm-4 col-form-label">Weight in /Kg</label>
-                <div class="col-sm">
-                    <input type="number" class="form-control" name="inputWeight" id="inputWeight" required [(ngModel)]="model.weight" />
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="inputActivityLevel" class="col-sm-4 col-form-label">Activity Level</label>
-                <div class="col-sm">
-                    <select class="form-control" name="inputActivityLevel" [(ngModel)]="model.activityLevel" required id="inputActivityLevel">
-                        <option value=1.2>Sedentary</option>
-                        <option value=1.325>Lightly Active</option>
-                        <option value=1.55>Moderate Active</option>
-                        <option value=1.725>Very Active</option>
-                        <option value=1.9>Extremely Active</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-6 offset-sm-10">
-                    <button type="submit" class="btn btn-primary">Next</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<div *ngIf="model.goal == true">
-    <app-workout-goal [values]="model"></app-workout-goal>
-</div>
+</section>
