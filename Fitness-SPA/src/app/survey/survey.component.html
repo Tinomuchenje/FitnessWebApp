@@ -1,18 +1,11 @@
-<section style="background:#efefe9;">
+<section style="background:#e2e217;">
     <div class="container">
         <div class="board">
-            <!-- Navigation Area (Circular Tabs) -->
             <app-form-bar></app-form-bar>
-            <!-- End Navigation Area (Circular Tabs) -->
-            <!-- Content Area -->
-            <div class="tab-content">
-                <!-- Routed view  -->
+            <div class="container">
                 <router-outlet></router-outlet>
             </div>
-            <!-- End Content Area -->
         </div>
-
-        <!-- For Debugging: show our formData as it is being typed -->
         <pre>{{ formData | json }}</pre>
     </div>
 </section>

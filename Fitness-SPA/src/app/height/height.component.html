@@ -1,6 +1,18 @@
-<div class="form-group row">
-    <label for="inputHeight" class="col-sm-4 col-form-label">Height</label>
-    <div class="col-sm">
-        <input type="number" class="form-control" name="inputHeight" id="inputHeight" />
+<br>
+<br>
+<form #HeightForm="ngForm" class="editForm" nonvalidate>
+    <br>
+    <h4 class="head text-center">{{title}}</h4>
+    <br>
+    <div class="form-group row">
+        <label for="inputAge" class="col-sm-4 col-form-label">Height</label>
+        <div class="col-sm">
+            <input type="number" class="form-control col-sm-4" name="inputHeight" id="inputHeight" [(ngModel)]="height.height" />
+        </div>
     </div>
-</div>
+    <div class="form-group row">
+        <div class="col-sm-6 offset-sm-10">
+            <button type="submit" class="btn btn-primary" [disabled]="!HeightForm.valid" (click)="proceed(HeightForm)">Next</button>
+        </div>
+    </div>
+</form>

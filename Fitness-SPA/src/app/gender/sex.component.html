@@ -1,0 +1,25 @@
+<form #genderForm="ngForm" class="editForm" novalidate>
+    <br>
+    <h4 class="head text-center">{{title}}</h4>
+    <br>
+    <div class="row justify-content-center align-items-center">
+        <div class="form-group col-sm-3">
+            <div class="card shadow p-3 mb-5 bg-dark rounded text-white">
+                <div class="card-header"><img src="./assets/images/woman.svg" class="card-img-top" alt="..." /></div>
+
+                <div class="card-body">
+                    <a href="#" (click)="setgender('female', genderForm)" class="btn btn-block text-white" routerLink="./age">Female</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-3 ">
+            <div class="card shadow p-3 mb-5 bg-dark rounded text-white ">
+                <div class="card-header "><img src="./assets/images/man.svg " class="card-img-top " alt="... " /></div>
+
+                <div class="card-body ">
+                    <a href="#" (click)="setgender('male', genderForm)" class="btn btn-block text-white" routerLink="./age">Male</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

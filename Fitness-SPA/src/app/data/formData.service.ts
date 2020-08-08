@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { FormData, Sex, Age } from './formData.model';
+import { FormData, Sex, Age, Height, Weight, Activity } from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
 
@@ -11,13 +11,16 @@ export class FormDataService {
     private isSexFormValid: boolean;
     private isWorkFormValid: boolean;
     private isAddressFormValid: boolean;
+    private isHeightValid: boolean;
+    private isweightValid: boolean;
+    private isActivityValid: boolean;
 
     constructor(private workflowService: WorkflowService) {
     }
 
     getSex(): Sex {
         // Return the Sex data
-        let sex: Sex = {
+        const sex: Sex = {
             isMale: this.formData.isMale,
             isFemale: this.formData.isFemale
         };
@@ -34,18 +37,58 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.sex);
     }
 
-    getage(): Age{
-        let sex: Age = {
+    getAge(): Age{
+        const age: Age = {
             age: this.formData.age,
         };
-        return sex;
+        return age;
     }
 
     // tslint:disable-next-line: typedef
-    setAge(data: Age){
+    setAge(data: Age) {
         this.isAddressFormValid = true;
         this.formData.age = data.age;
         this.workflowService.validateStep(STEPS.age);
+    }
+
+    // tslint:disable-next-line: typedef
+    setHeight(data: Height){
+        this.isHeightValid = true;
+        this.formData.height = data.height;
+        this.workflowService.validateStep(STEPS.height);
+    }
+
+    getHeight(): Height {
+        const height: Height = {
+            height: this.formData.height,
+        };
+        return height;
+    }
+
+    setWeight(data: Weight): void {
+        this.isHeightValid = true;
+        this.formData.weight = data.weight;
+        this.workflowService.validateStep(STEPS.weight);
+    }
+
+    getWeight(): Weight {
+        const weight: Weight = {
+            weight: this.formData.weight,
+        };
+        return weight;
+    }
+
+    setActivity(data: Activity): void {
+        this.isHeightValid = true;
+        this.formData.activity = data.activity;
+        this.workflowService.validateStep(STEPS.ActivityLevel);
+    }
+
+    getActivity(): Activity {
+        const activity: Activity = {
+            activity: this.formData.activity,
+        };
+        return activity;
     }
 
     getWork(): string {
