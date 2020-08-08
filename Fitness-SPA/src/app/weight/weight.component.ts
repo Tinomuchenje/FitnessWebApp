@@ -12,7 +12,7 @@ import { FormDataService } from '../data/formData.service';
 })
 
 export class WeightComponent implements OnInit {
-  title = 'What is your Weight';
+  title = 'How Much Do You Weigh?';
   weight: Weight;
   form: any;
 
@@ -21,6 +21,13 @@ export class WeightComponent implements OnInit {
   ngOnInit(): void {
     this.weight = this.formDataService.getWeight();
     console.log('Weight loaded');
+  }
+
+  displayWeight(value: any): any{
+    if (!value){
+    return 0;
+  }
+    return Math.round(value * 2.20462);
   }
 
   save(form: any): boolean {

@@ -3,10 +3,11 @@
 <form #weightForm="ngForm" class="editForm" nonvalidate>
     <h4 class="head text-center">{{title}}</h4>
     <br>
-    <div class="form-group row">
-        <label for="inputweight" class="col-sm-4 col-form-label">Weight</label>
+    <div class="form-group text-center">
+        <label for="inputweight" class="col-sm-4 col-form-label">Weight: {{weight.weight}} kg</label>
+        <label for="inputweight" class="col-sm-4 col-form-label">Weight: {{displayWeight(weight.weight)}} lbs</label>
         <div class="col-sm">
-            <input type="number" class="form-control col-sm-4" name="inputweight" id="inputweight" [(ngModel)]="weight.weight" />
+            <input type="range" class="form-control" min="10" max="300" name="inputweight" id="inputweight" [(ngModel)]="weight.weight" />
         </div>
     </div>
     <div class="form-group row">
