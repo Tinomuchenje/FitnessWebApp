@@ -1,0 +1,20 @@
+<br>
+<br>
+<form #AgeForm="ngForm" class="editForm" nonvalidate>
+    <br>
+    <div class="form-group">
+        <h3 class="head text-center">{{title}}</h3>
+    </div>
+    <br>
+    <div class="form-group text-center">
+        <label for="inputAge" class="col-sm-4 col-form-label">Age: {{age.age}}</label>
+        <div class="col-sm-12">
+            <input type="range" min="10" max="100" class="form-control col-sm" name="Age " id="inputAge" required [(ngModel)]="age.age" />
+        </div>
+    </div>
+    <div class="form-group row ">
+        <div class="col-sm-6 offset-sm-10 ">
+            <button type="submit " class="btn btn-primary " [disabled]="!AgeForm.valid " (click)="proceed(AgeForm) ">Next</button>
+        </div>
+    </div>
+</form>

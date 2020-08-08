@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-workout-goal',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workout-goal.component.css']
 })
 export class WorkoutGoalComponent implements OnInit {
+  @Input() values: any;
+  model: any = {};
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.values);
   }
 
 }
