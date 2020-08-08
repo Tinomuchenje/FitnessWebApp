@@ -10,7 +10,7 @@ import { FormDataService } from '../data/formData.service';
   styleUrls: ['./activity-level.component.css']
 })
 export class ActivityLevelComponent implements OnInit {
-  title = 'What level of activity';
+  title = 'Select level of activity';
   activity: Activity;
   form: any;
 
