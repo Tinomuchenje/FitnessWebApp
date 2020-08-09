@@ -18,7 +18,7 @@ export class ActivityLevelComponent implements OnInit {
 
   ngOnInit(): void {
     this.activity = this.formDataService.getActivity();
-    console.log('Weight loaded');
+    console.log('activity loaded');
   }
 
   save(form: any): boolean {
@@ -32,7 +32,7 @@ export class ActivityLevelComponent implements OnInit {
 
   proceed(form: any): void {
     if (this.save(form)) {
-      this.router.navigate(['/goal']);
+      this.router.navigate(['home/goal']);
     }
   }
 }

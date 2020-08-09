@@ -19,6 +19,7 @@ import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
+import { TargetComponent } from './target/target.component';
 
 @NgModule({
    declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
       HeightComponent,
       ActivityLevelComponent,
       FormBarComponent,
-      HomeComponent
+      HomeComponent,
+      TargetComponent
    ],
    imports: [
       BrowserModule,

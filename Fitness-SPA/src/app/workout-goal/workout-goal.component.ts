@@ -35,14 +35,14 @@ export class WorkoutGoalComponent implements OnInit {
     if (form.isFemale) {
       female = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) - 161;
       mantainanceDailyCalories = female * form.activity;
-      activeDailyCalories = mantainanceDailyCalories * 0.75;
+      activeDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
     let male: number;
     if (form.isMale) {
       male = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) + 5;
       mantainanceDailyCalories = male * form.activity;
-      activeDailyCalories = mantainanceDailyCalories * 1.25;
+      activeDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
     protein = (activeDailyCalories * 20 / 100) / 4;

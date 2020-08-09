@@ -4,5 +4,6 @@ export const STEPS = {
     height: 'height',
     weight: 'weight',
     ActivityLevel: 'activityLevel',
-    work: 'work'
+    work: 'work',
+    goal: 'goal'
 };

@@ -6,6 +6,7 @@ export class FormData {
     height: number;
     weight: number;
     activity: number;
+    goal: number;
 
     // tslint:disable-next-line: typedef
     clear() {
@@ -34,4 +35,8 @@ export class Weight {
 
 export class Activity {
     activity: number;
+}
+
+export class Goal {
+    goal: number;
 }

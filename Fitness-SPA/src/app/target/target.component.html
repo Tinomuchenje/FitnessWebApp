@@ -1,0 +1,37 @@
+<br>
+<br>
+
+<form #GoalFrom="ngForm">
+    <br>
+    <div class="form-group">
+        <h4 class="head text-center">{{title}}</h4>
+    </div>
+    <br>
+
+    <div class="form-group" *ngIf="this.gender.isMale">
+        <div class="col-sm-6 offset-sm-3">
+            <select class=" form-control" name="inputActivityLevel " [(ngModel)]="goal.goal" required id="inputActivityLevel">
+        <option value=1.25>I have a low amount of body fat and need/want to build more muscle.</option>
+        <option value=1.15>I am skinny fat, There is fat covering my abs but i know i need more muscle.</option>
+        <option value=0.85>I have a good amount of muscle ,But i need to lose one last layer of fat.</option>
+        <option value=0.65>I have a high amount of body fat, i need to lose fat fast.</option>
+      </select>
+        </div>
+    </div>
+
+    <div class="form-group" *ngIf="this.gender.isFemale">
+        <div class="col-sm-6 offset-sm-3">
+            <select class=" form-control" name="inputActivityLevel " [(ngModel)]="goal.goal" required id="inputActivityLevel">
+          <option value=0.75>I have Stubborn Fat around my belly and thighs. I want to slim down and increase my muscle tone</option>
+          <option value=1.15>I am Skinny Fat.I look thin but i have no shape. I want to gain muscle in the right areas to add shape and tone my body</option>
+          <option value=0.65>I have over 10gk to lose. I want to drop all this fat while building muscle to look my best.</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 offset-sm-10 ">
+            <button type="submit " class="btn btn-primary " [disabled]="!GoalFrom.valid " (click)="proceed(GoalFrom) ">Next</button>
+        </div>
+    </div>
+</form>

@@ -7,6 +7,7 @@ import { WeightComponent } from './weight/weight.component';
 import { HeightComponent } from './height/height.component';
 import { ActivityLevelComponent } from './activity-level/activity-level.component';
 import { WorkoutGoalComponent } from './workout-goal/workout-goal.component';
+import { TargetComponent } from './target/target.component';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
@@ -16,8 +17,9 @@ export const appRoutes: Routes = [
         { path: 'weight', component: WeightComponent },
         { path: 'height', component: HeightComponent },
         { path: 'activity', component: ActivityLevelComponent },
-         { path: '**', redirectTo: 'sex', pathMatch: 'full' }
+        { path: 'goal', component: TargetComponent },
+        { path: '**', redirectTo: 'sex', pathMatch: 'full' }
     ] },
-    { path: 'goal', component: WorkoutGoalComponent },
+    { path: 'course', component: WorkoutGoalComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

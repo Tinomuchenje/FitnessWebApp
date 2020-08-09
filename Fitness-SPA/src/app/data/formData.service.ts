@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { FormData, Sex, Age, Height, Weight, Activity } from './formData.model';
+import { FormData, Sex, Age, Height, Weight, Activity, Goal } from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
 
@@ -14,6 +14,7 @@ export class FormDataService {
     private isHeightValid: boolean;
     private isweightValid: boolean;
     private isActivityValid: boolean;
+    private isGoalValid: boolean;
 
     constructor(private workflowService: WorkflowService) {
     }
@@ -89,6 +90,19 @@ export class FormDataService {
             activity: this.formData.activity,
         };
         return activity;
+    }
+
+    setGoal(data: Goal): void {
+        this.isGoalValid = true;
+        this.formData.goal = data.goal;
+        this.workflowService.validateStep(STEPS.goal);
+    }
+
+    getGoal(): Goal {
+        const goal: Goal = {
+            goal: this.formData.goal,
+        };
+        return goal;
     }
 
     getWork(): string {
