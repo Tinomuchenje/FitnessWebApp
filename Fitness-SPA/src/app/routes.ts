@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
         { path: 'weight', component: WeightComponent },
         { path: 'height', component: HeightComponent },
         { path: 'activity', component: ActivityLevelComponent },
-         { path: '**', redirectTo: 'sex', pathMatch: 'full' }
+         { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ] },
     { path: 'goal', component: WorkoutGoalComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
