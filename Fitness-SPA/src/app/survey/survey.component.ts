@@ -8,7 +8,7 @@ import { FormDataService } from '../data/formData.service';
 })
 
 export class SurveyComponent implements OnInit {
-  title = 'Survey';
+  title = 'Find out EXACTLY What Diet & Training is Best For You';
   @Input() formData;
 
   constructor(private formDataService: FormDataService) { }
