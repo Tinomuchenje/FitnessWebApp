@@ -2,10 +2,10 @@ export class FormData {
     isMale: boolean;
     isFemale: boolean;
     work: string;
-    age: Int32Array;
-    height: Int32Array;
-    weight: Int32Array;
-    activity: Int32Array;
+    age: number;
+    height: number;
+    weight: number;
+    activity: number;
 
     // tslint:disable-next-line: typedef
     clear() {
@@ -21,17 +21,17 @@ export class Sex {
 }
 
 export class Age {
-    age: Int32Array;
+    age: number;
 }
 
 export class Height {
-    height: Int32Array;
+    height: number;
 }
 
 export class Weight {
-    weight: Int32Array;
+    weight: number;
 }
 
 export class Activity {
-    activity: Int32Array;
+    activity: number;
 }

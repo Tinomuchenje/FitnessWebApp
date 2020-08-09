@@ -1,22 +1,30 @@
 <div class="container">
-    <div class="row featurette">
+    <br>
+    <h2 class="head text-center ">{{title}}</h2>
+    <br>
+    <div class="row featurette" *ngIf="this.formData.isMale">
         <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw " allowfullscreen></iframe>
+            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row featurette" *ngIf="this.formData.isFemale">
+        <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/2MoGxae-zyo" allowfullscreen></iframe>
         </div>
     </div>
 </div>
 <div class="container">
-    <div class="card offset-sm-4 text-center shadow-sm p-3 mb-5 bg-white rounded" style="width: 28rem; ">
-        <div class="card-body text-primary">
+    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card-body text-primary ">
             <h2 class="card-title ">Your daily Macros</h2>
         </div>
         <ul class="list-group list-group-flush ">
             <li class="list-group-item ">
-                <b>CARBOHYDRATES: &nbsp;&nbsp; {{values.carbohydrates}} %</b></li>
+                <b>CARBOHYDRATES: &nbsp;&nbsp; {{model.carbohydrates}} %</b></li>
             <li class="list-group-item ">
-                <b>PROTEIN: &nbsp;&nbsp; {{values.protein}} % </b></li>
+                <b>PROTEIN: &nbsp;&nbsp; {{model.protein}} % </b></li>
             <li class="list-group-item ">
-                <b>FAT: &nbsp;&nbsp; {{values.fat}} %</b>
+                <b>FAT: &nbsp;&nbsp; {{model.fat}} %</b>
             </li>
         </ul>
     </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormDataService } from '../data/formData.service';
+
+import { FormData, Sex, Age, Height, Weight, Activity } from '../data/formData.model';
 
 @Component({
   selector: 'app-workout-goal',
@@ -6,13 +9,55 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./workout-goal.component.css']
 })
 export class WorkoutGoalComponent implements OnInit {
-  @Input() values: any;
+  title = 'This Diet & Training is Best For You';
   model: any = {};
+  @Input() formData;
 
-  constructor() { }
+  constructor(private formDataService: FormDataService) { }
 
-  ngOnInit() {
-    console.log(this.values);
+  ngOnInit(): void {
+    this.formData = this.formDataService.getFormData();
+    if (this.formData){
+      this.calculate(this.formData);
+
+    }
+  }
+
+  calculate(form: FormData): void {
+    console.log(form);
+    let female: number;
+    let mantainanceDailyCalories: number;
+    let activeDailyCalories: number;
+    let protein: number;
+    let carbohydrates: number;
+    let fat: number;
+
+    if (form.isFemale) {
+      female = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) - 161;
+      mantainanceDailyCalories = female * form.activity;
+      activeDailyCalories = mantainanceDailyCalories * 0.75;
+    }
+
+    let male: number;
+    if (form.isMale) {
+      male = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) + 5;
+      mantainanceDailyCalories = male * form.activity;
+      activeDailyCalories = mantainanceDailyCalories * 1.25;
+    }
+
+    protein = (activeDailyCalories * 20 / 100) / 4;
+    protein = (protein / activeDailyCalories) * 100;
+
+    carbohydrates = (activeDailyCalories * 50 / 100) / 4;
+    carbohydrates = (carbohydrates / activeDailyCalories) * 100;
+
+    fat = (activeDailyCalories * 30 / 100) / 9;
+    fat = (fat / activeDailyCalories) * 100;
+
+    this.model.protein = Math.round(protein) || 0;
+    this.model.carbohydrates = Math.round(carbohydrates) || 0;
+    this.model.fat = Math.round(fat) || 0;
+    console.log(form);
   }
 
 }
