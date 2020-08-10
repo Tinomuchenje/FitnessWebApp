@@ -20,6 +20,8 @@ import { WorkflowService } from './workflow/workflow.service';
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { TargetComponent } from './target/target.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
    declarations: [
@@ -39,7 +41,8 @@ import { TargetComponent } from './target/target.component';
    imports: [
       BrowserModule,
       FormsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
    ],
    providers: [
       FormDataService,
