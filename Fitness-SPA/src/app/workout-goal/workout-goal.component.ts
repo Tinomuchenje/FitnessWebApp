@@ -67,18 +67,22 @@ export class WorkoutGoalComponent implements OnInit {
     if (form.isMale){
       switch (form.goal.toString()){
         case '1.25': {
+          this.setCourseTitle('90 Day Huge Bulk Program');
           this.videoUrl = 'https://www.youtube.com/embed/3p8EBPVZ2Iw';
           break;
         }
         case '1.15': {
+          this.setCourseTitle('90 Day Lean Program');
           this.videoUrl = 'https://www.youtube.com/embed/JTjhmQadzJ8';
           break;
         }
         case '0.85': {
+          this.setCourseTitle('90 Day Lean Program');
           this.videoUrl = 'https://www.youtube.com/embed/Mg6_6E_kxDI';
           break;
         }
         case '0.65': {
+          this.setCourseTitle('90 Day Maximum Fat Loss Program');
           this.videoUrl = 'https://www.youtube.com/embed/3sEeVJEXTfY';
           break;
         }
@@ -88,18 +92,25 @@ export class WorkoutGoalComponent implements OnInit {
     if (form.isFemale){
       switch (form.goal.toString()) {
         case '0.75': {
+          this.setCourseTitle('90 Day Maximum Fat Loss Program');
           this.videoUrl = 'https://www.youtube.com/embed/2MoGxae-zyo';
           break;
         }
         case '1.15': {
+          this.setCourseTitle('90 Day Lean Build Program');
           this.videoUrl = 'https://www.youtube.com/embed/UBMk30rjy0o';
           break;
         }
         case '0.65': {
+          this.setCourseTitle('90 Day Maximum Fat Loss Program');
           this.videoUrl = 'https://www.youtube.com/embed/7KgiB_TDMMk';
           break;
         }
       }
     }
+  }
+
+  setCourseTitle(title: string): void {
+    this.title = title;
   }
 }
