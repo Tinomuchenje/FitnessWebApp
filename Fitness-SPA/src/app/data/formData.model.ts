@@ -7,6 +7,8 @@ export class FormData {
     weight: number;
     activity: number;
     goal: number;
+    maleCategory: MaleGoalCategories;
+    femaleCategory: FemaleGoalCategories;
 
     // tslint:disable-next-line: typedef
     clear() {
@@ -19,6 +21,18 @@ export class FormData {
 export class Sex {
     isMale: boolean;
     isFemale: boolean;
+}
+
+enum MaleGoalCategories{
+    categoryOne = 1,
+    categoryTwo = 2,
+    categoryThree = 3,
+    categoryFour = 4,
+}
+enum FemaleGoalCategories {
+    categoryOne = 1,
+    categoryTwo = 2,
+    categoryThree = 3,
 }
 
 export class Age {

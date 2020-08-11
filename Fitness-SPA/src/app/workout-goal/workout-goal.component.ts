@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormDataService } from '../data/formData.service';
 
-import { FormData, Sex, Age, Height, Weight, Activity } from '../data/formData.model';
+import { FormData } from '../data/formData.model';
 
 @Component({
   selector: 'app-workout-goal',
@@ -12,14 +12,17 @@ export class WorkoutGoalComponent implements OnInit {
   title = 'This Diet & Training is Best For You';
   model: any = {};
   @Input() formData;
+  category: any;
+  videoUrl: string;
 
   constructor(private formDataService: FormDataService) { }
 
   ngOnInit(): void {
     this.formData = this.formDataService.getFormData();
     if (this.formData){
+      this.category = this.getCategory(this.formData);
+      console.log(this.category);
       this.calculate(this.formData);
-
     }
   }
 
@@ -60,4 +63,43 @@ export class WorkoutGoalComponent implements OnInit {
     console.log(form);
   }
 
+  getCategory(form: FormData): any {
+    if (form.isMale){
+      switch (form.goal.toString()){
+        case '1.25': {
+          this.videoUrl = 'https://www.youtube.com/embed/3p8EBPVZ2Iw';
+          break;
+        }
+        case '1.15': {
+          this.videoUrl = 'https://www.youtube.com/embed/JTjhmQadzJ8';
+          break;
+        }
+        case '0.85': {
+          this.videoUrl = 'https://www.youtube.com/embed/Mg6_6E_kxDI';
+          break;
+        }
+        case '0.65': {
+          this.videoUrl = 'https://www.youtube.com/embed/3sEeVJEXTfY';
+          break;
+        }
+      }
+    }
+
+    if (form.isFemale){
+      switch (form.goal.toString()) {
+        case '0.75': {
+          this.videoUrl = 'https://www.youtube.com/embed/2MoGxae-zyo';
+          break;
+        }
+        case '1.15': {
+          this.videoUrl = 'https://www.youtube.com/embed/UBMk30rjy0o';
+          break;
+        }
+        case '0.65': {
+          this.videoUrl = 'https://www.youtube.com/embed/7KgiB_TDMMk';
+          break;
+        }
+      }
+    }
+  }
 }

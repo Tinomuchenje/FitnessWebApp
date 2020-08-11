@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { TargetComponent } from './target/target.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SafeurlPipe } from './safeurl.pipe';
 
 @NgModule({
    declarations: [
@@ -36,7 +37,8 @@ import { environment } from '../environments/environment';
       ActivityLevelComponent,
       FormBarComponent,
       HomeComponent,
-      TargetComponent
+      TargetComponent,
+      SafeurlPipe
    ],
    imports: [
       BrowserModule,

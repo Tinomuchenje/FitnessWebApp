@@ -4,17 +4,17 @@
     <br>
     <div class="row featurette" *ngIf="this.formData.isMale">
         <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/3p8EBPVZ2Iw" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item " [src]="(this.videoUrl) | safeurl" allowfullscreen></iframe>
         </div>
     </div>
     <div class="row featurette" *ngIf="this.formData.isFemale">
-        <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/2MoGxae-zyo" allowfullscreen></iframe>
+        <div class=" col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9 ">
+            <iframe class="embed-responsive-item " [src]="(this.videoUrl) | safeurl" allowfullscreen></iframe>
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+<div class="container ">
+    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded ">
         <div class="card-body text-primary ">
             <h2 class="card-title ">Your daily Macros</h2>
         </div>
