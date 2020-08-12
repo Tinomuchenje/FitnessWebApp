@@ -16,15 +16,24 @@
 <div class="container ">
     <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded ">
         <div class="card-body text-primary ">
-            <h2 class="card-title ">Your daily Macros</h2>
+            <h4 class="card-title ">
+                <b>YOUR DAILY MACROS</b></h4>
+        </div>
+        <hr>
+        <div class="card-body text-primary ">
+            <h5 class="card-title ">
+                <b>{{this.model.dailyCalories}} &nbsp; CALORIES PER DAY</b></h5>
         </div>
         <ul class="list-group list-group-flush ">
             <li class="list-group-item ">
-                <b>CARBOHYDRATES: &nbsp;&nbsp; {{model.carbohydrates}} %</b></li>
+                <b>CARBOHYDRATES: &nbsp; {{model.c}}g &nbsp; <small> {{model.carbohydrates}} %</small> </b></li>
             <li class="list-group-item ">
-                <b>PROTEIN: &nbsp;&nbsp; {{model.protein}} % </b></li>
+                <b>PROTEIN: &nbsp;{{model.p}}g &nbsp; <small> {{model.protein}} %</small> </b></li>
             <li class="list-group-item ">
-                <b>FAT: &nbsp;&nbsp; {{model.fat}} %</b>
+                <b>FAT: &nbsp;{{model.f}}g &nbsp; <small>{{model.fat}} %</small></b>
+            </li>
+            <li class="list-group-item ">
+                <b>Activity: &nbsp;{{this.activityLevel}}&nbsp; </b>
             </li>
         </ul>
     </div>

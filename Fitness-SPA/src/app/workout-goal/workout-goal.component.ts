@@ -14,6 +14,7 @@ export class WorkoutGoalComponent implements OnInit {
   @Input() formData;
   category: any;
   videoUrl: string;
+  activityLevel: string;
 
   constructor(private formDataService: FormDataService) { }
 
@@ -21,8 +22,8 @@ export class WorkoutGoalComponent implements OnInit {
     this.formData = this.formDataService.getFormData();
     if (this.formData){
       this.category = this.getCategory(this.formData);
-      console.log(this.category);
       this.calculate(this.formData);
+      this.activityLeve(this.formData);
     }
   }
 
@@ -30,7 +31,7 @@ export class WorkoutGoalComponent implements OnInit {
     console.log(form);
     let female: number;
     let mantainanceDailyCalories: number;
-    let activeDailyCalories: number;
+    let actualDailyCalories: number;
     let protein: number;
     let carbohydrates: number;
     let fat: number;
@@ -38,28 +39,32 @@ export class WorkoutGoalComponent implements OnInit {
     if (form.isFemale) {
       female = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) - 161;
       mantainanceDailyCalories = female * form.activity;
-      activeDailyCalories = mantainanceDailyCalories * form.goal;
+      actualDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
     let male: number;
     if (form.isMale) {
       male = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) + 5;
       mantainanceDailyCalories = male * form.activity;
-      activeDailyCalories = mantainanceDailyCalories * form.goal;
+      actualDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
-    protein = (activeDailyCalories * 20 / 100) / 4;
-    protein = (protein / activeDailyCalories) * 100;
+    protein = ((actualDailyCalories * 20 ) / 100) / 4;
+    this.model.p = Math.round(protein) || 0;
+    protein = (protein / actualDailyCalories) * 100;
 
-    carbohydrates = (activeDailyCalories * 50 / 100) / 4;
-    carbohydrates = (carbohydrates / activeDailyCalories) * 100;
+    carbohydrates = ((actualDailyCalories * 50) / 100) / 4;
+    this.model.c = Math.round(carbohydrates) || 0;
+    carbohydrates = (carbohydrates / actualDailyCalories) * 100;
 
-    fat = (activeDailyCalories * 30 / 100) / 9;
-    fat = (fat / activeDailyCalories) * 100;
+    fat = ((actualDailyCalories * 30) / 100) / 9;
+    this.model.f = Math.round(fat) || 0;
+    fat = (fat / actualDailyCalories) * 100;
 
     this.model.protein = Math.round(protein) || 0;
     this.model.carbohydrates = Math.round(carbohydrates) || 0;
     this.model.fat = Math.round(fat) || 0;
+    this.model.dailyCalories = Math.round(actualDailyCalories) || 0;
     console.log(form);
   }
 
@@ -112,5 +117,31 @@ export class WorkoutGoalComponent implements OnInit {
 
   setCourseTitle(title: string): void {
     this.title = title;
+  }
+
+  activityLeve(form: FormData): any {
+    switch (form.activity.toString()) {
+      case '1.2': {
+        this.activityLevel = 'Sedentary';
+        break;
+    }
+      case '1.325': {
+        this.activityLevel = 'Light Activity';
+        break;
+      }
+      case '1.55': {
+        this.activityLevel = 'Moderate Activity';
+        break;
+      }
+      case '1.725': {
+        this.activityLevel = 'Very Active';
+        break;
+      }
+      case '1.9': {
+        this.activityLevel = 'Extreme Activity';
+        break;
+      }
+    }
+
   }
 }
