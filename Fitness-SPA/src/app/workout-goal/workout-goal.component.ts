@@ -37,27 +37,27 @@ export class WorkoutGoalComponent implements OnInit {
     let fat: number;
 
     if (form.isFemale) {
-      female = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) - 161;
+      female = (form.weight * 10) + (form.height * 6.5) - (form.age * 5) - 161;
       mantainanceDailyCalories = female * form.activity;
       actualDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
     let male: number;
     if (form.isMale) {
-      male = (form.weight * 10) + (form.height * 100 * 6.5) - (form.age * 5) + 5;
+      male = (form.weight * 10) + (form.height * 6.5) - (form.age * 5) + 5;
       mantainanceDailyCalories = male * form.activity;
       actualDailyCalories = mantainanceDailyCalories * form.goal;
     }
 
-    protein = ((actualDailyCalories * 20 ) / 100) / 4;
+    protein = ((actualDailyCalories * 0.2) / 4);
     this.model.p = Math.round(protein) || 0;
     protein = (protein / actualDailyCalories) * 100;
 
-    carbohydrates = ((actualDailyCalories * 50) / 100) / 4;
+    carbohydrates = ((actualDailyCalories * 0.5) / 4);
     this.model.c = Math.round(carbohydrates) || 0;
     carbohydrates = (carbohydrates / actualDailyCalories) * 100;
 
-    fat = ((actualDailyCalories * 30) / 100) / 9;
+    fat = ((actualDailyCalories * 0.3) / 9);
     this.model.f = Math.round(fat) || 0;
     fat = (fat / actualDailyCalories) * 100;
 
