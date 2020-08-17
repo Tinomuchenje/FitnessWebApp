@@ -23,9 +23,10 @@ import { TargetComponent } from './target/target.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SafeurlPipe } from './safeurl.pipe';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       NavbarComponent,
       SurveyComponent,
@@ -38,7 +39,8 @@ import { SafeurlPipe } from './safeurl.pipe';
       FormBarComponent,
       HomeComponent,
       TargetComponent,
-      SafeurlPipe
+      SafeurlPipe,
+      PaymentComponent
    ],
    imports: [
       BrowserModule,
