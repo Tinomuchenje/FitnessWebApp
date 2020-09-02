@@ -6,12 +6,18 @@ import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SafeurlPipe } from './safeurl.pipe';
 
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import {
+   NgbAuthFirebaseUIModule,
+   NgBootstrapAuthFirebaseUIConfigToken,
+   AuthProcessService,
+   AlertService,
+   FirestoreSyncService
+} from '@firebaseui/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,7 +38,6 @@ import { TargetComponent } from './target/target.component';
 import { PaymentComponent } from './payment/payment.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
    declarations: [
@@ -56,19 +61,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
    imports: [
       BrowserModule,
       FormsModule,
-      NgbAuthFirebaseUIModule,
       AngularFireAuthModule,
-      AngularFireAnalyticsModule,
       AngularFireStorageModule,
-      AngularFirestoreModule,
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-      AngularFireModule.initializeApp(environment.firebase),
-      NgbModule
+      AngularFireModule,
+      NgbAuthFirebaseUIModule,
    ],
    providers: [
       FormDataService,
-      WorkflowService
+      WorkflowService,
+      AngularFirestore,
+      AuthProcessService,
+      AlertService,
+      FirestoreSyncService,
+      { provide: FirebaseOptionsToken, useValue: environment.firebase },
+      { provide: NgBootstrapAuthFirebaseUIConfigToken, useValue: environment.firebase }
    ],
    bootstrap: [
       AppComponent
