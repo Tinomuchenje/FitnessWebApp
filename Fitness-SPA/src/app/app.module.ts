@@ -11,14 +11,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import {
-   NgbAuthFirebaseUIModule,
-   NgBootstrapAuthFirebaseUIConfigToken,
-   AuthProcessService,
-   AlertService,
-   FirestoreSyncService
-} from '@firebaseui/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -36,8 +28,12 @@ import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { TargetComponent } from './target/target.component';
 import { PaymentComponent } from './payment/payment.component';
-import { LoginComponent } from './login/login.component';
+
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
    declarations: [
@@ -55,8 +51,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
       TargetComponent,
       SafeurlPipe,
       PaymentComponent,
-      LoginComponent,
       SignUpComponent,
+      SignUpComponent,
+      ForgotPasswordComponent,
+      SignInComponent,
+      VerifyEmailComponent
    ],
    imports: [
       BrowserModule,
@@ -66,17 +65,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
       AngularFireModule,
-      NgbAuthFirebaseUIModule,
    ],
    providers: [
       FormDataService,
       WorkflowService,
       AngularFirestore,
-      AuthProcessService,
-      AlertService,
-      FirestoreSyncService,
+      AuthService,
       { provide: FirebaseOptionsToken, useValue: environment.firebase },
-      { provide: NgBootstrapAuthFirebaseUIConfigToken, useValue: environment.firebase }
    ],
    bootstrap: [
       AppComponent
