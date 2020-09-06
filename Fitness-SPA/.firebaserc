@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fitness-775ef": {
+      "hosting": {
+        "Fitness-SPA": [
+          "fitness-775ef"
+        ]
+      }
+    }
+  }
+}
