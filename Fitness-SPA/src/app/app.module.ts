@@ -34,9 +34,11 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { SignInComponent } from './sign-in/sign-in.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AuthService } from './shared/services/auth.service';
+import { ProfileComponent } from './profile/profile.component';
+import { ProgramComponent } from './program/program.component';
 
 @NgModule({
-   declarations: [
+   declarations: [		
       AppComponent,
       NavbarComponent,
       SurveyComponent,
@@ -55,7 +57,9 @@ import { AuthService } from './shared/services/auth.service';
       SignUpComponent,
       ForgotPasswordComponent,
       SignInComponent,
-      VerifyEmailComponent
+      VerifyEmailComponent,
+      ProfileComponent,
+      ProgramComponent
    ],
    imports: [
       BrowserModule,
