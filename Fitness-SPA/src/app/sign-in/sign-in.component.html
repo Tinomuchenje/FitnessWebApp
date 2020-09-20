@@ -4,17 +4,17 @@
     <div class="authBlock">
       <h3>Sign In</h3>
       <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
+        <input type="text" class="formControl" placeholder="Username" [(ngModel)]="user.username" required>
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+        <input type="password" class="formControl" placeholder="Password" [(ngModel)]="user.password" required>
       </div>
 
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">
         <input type="button" class="btn btnPrimary" value="Log in"
-               (click)="authService.SignIn(userName.value, userPassword.value)">
+               (click)="signIn(user.username, user.password)">
       </div>
 
       <div class="formGroup">

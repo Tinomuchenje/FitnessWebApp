@@ -10,6 +10,8 @@ import { WorkoutGoalComponent } from './workout-goal/workout-goal.component';
 import { TargetComponent } from './target/target.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProgramComponent } from './program/program.component';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
@@ -25,5 +27,7 @@ export const appRoutes: Routes = [
     { path: 'course', component: WorkoutGoalComponent },
     { path: 'sign-in', component: SignInComponent },
     { path: 'sign-up', component: SignUpComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'program', component: ProgramComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
