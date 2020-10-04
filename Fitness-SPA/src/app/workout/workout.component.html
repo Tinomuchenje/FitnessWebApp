@@ -1,3 +1,35 @@
-<p>
-  workout works!
-</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let x of getWorkouts()" class="form-group col-sm-2">
+      <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white" routerLink="./program">
+        <div class="card-body">
+          <a href="#" class="btn btn-block text-white" routerLink="/program"><b>Day {{x.Id}}</b></a>
+        </div>
+      </div>
+        <div *ngIf="x.IsComplete === false" class="card shadow rounded " routerLink="./program">
+          <div class="card-body">
+            <a href="#" class="btn btn-block text-primary" routerLink="/program"><b>Day {{x.Id}}</b></a>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<!-- <div class="container">
+  <div class="row">
+    <div *ngFor="let x of getWorkouts()" class="form-group col-sm-2">
+      <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white"
+           routerLink="./program">
+        <div class="card-body">
+          <a href="#" class="btn btn-block text-white" routerLink="/program"><b>Day {{x.Id}}</b></a>
+        </div>
+      </div>
+      <div *ngIf="x.IsComplete === false" class="card shadow rounded " routerLink="./program">
+        <div class="card-body">
+          <a href="#" class="btn btn-block text-primary" routerLink="/program"><b>Day {{x.Id}}</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
