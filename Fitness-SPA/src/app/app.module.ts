@@ -36,9 +36,12 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AuthService } from './shared/services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { ProgramComponent } from './program/program.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-   declarations: [		
+   declarations: [
       AppComponent,
       NavbarComponent,
       SurveyComponent,
@@ -59,7 +62,9 @@ import { ProgramComponent } from './program/program.component';
       SignInComponent,
       VerifyEmailComponent,
       ProfileComponent,
-      ProgramComponent
+      ProgramComponent,
+      WorkoutComponent,
+      ProgressTrackerComponent
    ],
    imports: [
       BrowserModule,
@@ -69,6 +74,7 @@ import { ProgramComponent } from './program/program.component';
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
       AngularFireModule,
+      NgbModule,
    ],
    providers: [
       FormDataService,

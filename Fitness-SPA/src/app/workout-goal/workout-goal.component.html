@@ -1,6 +1,23 @@
 <div class="container">
     <br>
-    <h2 class="head text-center ">{{title}}</h2>
+    <div class="form-group column">
+        <app-payment [selectedCourseTitle]="this.title"></app-payment>
+    </div>
+
+    <div class="text-center">
+        <h2>Based on your answers, We have found the best scientce-based program to reach your goals.</h2>
+    </div>
+
+    <div class="text-center">
+        <h2 class="head text-center ">Title</h2>
+    </div>
+    <div class="text-center goal-description">
+        <p>Is Superb If You're Skinny And Looking To
+            Build Lean, Thick muscles...
+            And Show Your Muscle Definition
+            Without Getting FAT
+            Home Workouts Are Included In This Program.</p>
+    </div>
     <br>
     <div class="row featurette" *ngIf="this.formData.isMale">
         <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
@@ -13,6 +30,31 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="text-center urgent">
+        <h3><b>Once of Payment of <s>$79</s> $29</b></h3>
+        <h3><b>Opening Special : 63% OFF BARGAIN!</b></h3>
+    </div>
+
+    <div class="text-center goal-description">
+        <p>And Show Your Muscle Definition</p>
+        <p>Without Getting FAT</p>
+        <p>Home Workouts Are Included In This Program.</p>
+    </div>
+
+    <div class="form-group column">
+        <app-payment [selectedCourseTitle]="this.title"></app-payment>
+    </div>
+
+    <h1 class="text-center">Lifetime Access To The Entire Program</h1>
+
+    <div classs="col-sm-6">
+        <img src="./assets/images/moneyback.png" class="money-back" alt="Money back guarantee">
+    </div>
+
+</div>
+
+
 <div class="container ">
     <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded ">
         <div class="card-body text-primary ">
@@ -37,8 +79,117 @@
             </li>
         </ul>
     </div>
+
+
+    <div class="goal-description">
+        <h3><b>Dear Reader</b></h3>
+        <p>Based on your answers to the quiz. We've got the perfect program for you.
+            This will help you pack on muscle with no problem and get you into your dream shape.
+            Shape that raises eyebrows everywhere you go.
+            But before i tell you what program i have for you.. I want to assure you that i know exactly what you are
+            going through.
+            Your muscle mass is low, People refer to you as skinny. You Prabably dont feel as big as you would like to
+            in your
+            clothes.
+            You might even have trouble with the ladies due to your lack of muscle.(Stereotypical but true)
+
+            <br>
+            Well...
+
+            That all changes <b>NOW</b>
+        </p>
+    </div>
+    <br>
+
+    <div class="goal-description">
+        <h2><b>This Is What Is Included in the Male Cat 1</b></h2>
+
+        <h3>Workout Log</h3>
+        <p>Once you sign up you will have access to a members only area. Within the memebers only area you will have a
+            calander
+            from Day 1 all the way to Day 90. Once you have completed the program for the day it will be marked as done.
+            This will
+            show you your progress and help you to stay consistent with your training.</p>
+
+        <h3>Your 90 Day Program (Gym Workouts)</h3>
+        <p>This is the Core of the program. You will get workouts desinged specially to get you to your goals. Each
+            exercise listed
+            in these workouts will have a vedio totorial showing you exactly how to perform the exersises.</p>
+
+        <h3>Your 90 Day Program (Home Workouts)</h3>
+        <p>We are also included a home workout program that you can use if you cant get to the gym. Not only can you
+            train from
+            home but you can choose whether you want to do a home or gym workout each day and you will still see
+            results. By giving
+            you a home workout alternative we are completly eleminating the possiblity of you skipping a workout.</p>
+
+        <h3>HIIT Guide</h3>
+        <p>This guide will make your cardio less of a pain and 10x faster. Included will be a great variety of exercises
+            for you to
+            chose from.</p>
+
+        <h3>Diet Guide : Begginer</h3>
+        <p>Learn the basics of nutrition to help you understand what type of food choices you should make.Learn what
+            macros are and
+            how to implement it into your diet.Learn about micros and what you should be consuming on a daily basis to
+            stay healthy.</p>
+
+        <h3>Diet Guide : Advance</h3>
+        <p>After undertsanding the basics we dig deaper into the formula that is used to calculate how many calories you
+            should be
+            having every day. The Formula is extremely important because as you start to see progress you will have to
+            addapt your
+            diet to you new weight and activity level to see continoues progress.</p>
+
+
+        <h3>A Guide To Create Your Own Meal Plan</h3>
+        <p>I provide you with a guide to create a meal plan based on your daily calorie goals. I provide various options
+            for each
+            mean of the day, as well as for your snacks of the day. This will allow you to stick to your diet and
+            untimatly see
+            greater results.
+        </p>
+    </div>
+
+    <br>
+
+    <br>
+
+    <div class="goal-description">
+        <h4>Plus these free Bonus</h4>
+
+        <h3>Free BONUS #1 Big Arms Program (Normally $39)</h3>
+        <p>The big Arms program looks at the most effective exercises to target each individual part of the arm. We
+            disect every
+            single muscle that makes up your arm. We then use scientific literature to formulate the most effective
+            workouts for
+            growing Massive Arms.</p>
+
+        <h3>Free BONUS #2 Recipe Book (Normally $39)</h3>
+        <p>In the recipe book i give you 55 recipies for your meal plan. This includes calories for each
+            meal,instructions on
+            preparing each meal. We also have a section of meals that can be made in under 10 mins to keep your life as
+            convienient
+            as possible.</p>
+
+        <h3>Free BONUS #3 Sick Pack Program (Normally $39)</h3>
+        <p>The Six Pack program is Everything you will need to get a six pack. Nutrition is absolutly vital and
+            therefore we split
+            up the program into 2 phases, the first of wihich will focus on Nutrition and the second focusses on the
+            actual
+            workouts. We give you a in depth description of each exercise, tellling you exactly which muscles are
+            working sothat you
+            can develop that all important mind to muscle connection.</p>
+
+        <h3>Free BONUS #4 Supplement guide</h3>
+        <p>In the supplement guide i give you a breakdown of the most popular supplements. I tell you which you should
+            stay away
+            from and which i recommend.</p>
+    </div>
+    <br>
+
     <div class="form-group column">
         <app-payment [selectedCourseTitle]="this.title"></app-payment>
     </div>
-    
+
 </div>

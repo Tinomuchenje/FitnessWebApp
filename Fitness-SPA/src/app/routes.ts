@@ -12,6 +12,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProgramComponent } from './program/program.component';
+import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.component';
+import { WorkoutComponent } from './workout/workout.component';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
@@ -29,5 +31,7 @@ export const appRoutes: Routes = [
     { path: 'sign-up', component: SignUpComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'program', component: ProgramComponent },
+    { path: 'workout', component: WorkoutComponent },
+    { path: 'tracker', component: ProgressTrackerComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
