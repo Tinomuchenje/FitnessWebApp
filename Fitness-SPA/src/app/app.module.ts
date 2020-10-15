@@ -38,9 +38,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProgramComponent } from './program/program.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-   declarations: [				
+   declarations: [
       AppComponent,
       NavbarComponent,
       SurveyComponent,
@@ -73,6 +74,7 @@ import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.co
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
       AngularFireModule,
+      NgbModule,
    ],
    providers: [
       FormDataService,

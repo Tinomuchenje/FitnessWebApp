@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { analytics } from 'firebase';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-workout',
@@ -8,10 +8,28 @@ import { analytics } from 'firebase';
 })
 export class WorkoutComponent implements OnInit {
 
-
-  constructor() { }
+  closeResult: string;
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void{
+  }
+
+  open(content): void {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
   getWorkouts(): any{
@@ -23,7 +41,7 @@ export class WorkoutComponent implements OnInit {
     const array2 = [workout1, workout2, workout3, workout4];
     let date = 0;
 
-    for (date = 4; date <= 90; date ++){
+    for (date = 4; date <= 30; date ++){
       array.push({ Id: date, IsComplete: false});
     }
 

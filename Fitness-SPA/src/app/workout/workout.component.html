@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row">
     <div *ngFor="let x of getWorkouts()" class="form-group col-sm-2">
-      <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white" routerLink="./program">
+      <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white" (click)="open(mymodal)" data-toggle="modal" data-target="#myModal">
         <div class="card-body">
           <a href="#" class="btn btn-block text-white" routerLink="/program"><b>Day {{x.Id}}</b></a>
         </div>
       </div>
-        <div *ngIf="x.IsComplete === false" class="card shadow rounded " routerLink="./program">
+        <div *ngIf="x.IsComplete === false" class="card shadow rounded " data-toggle="modal" data-target="#myModal">
           <div class="card-body">
             <a href="#" class="btn btn-block text-primary" routerLink="/program"><b>Day {{x.Id}}</b></a>
           </div>
@@ -16,11 +16,42 @@
 </div>
 </div>
 <br>
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is example from ItSolutionStuff.com
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
 <!-- <div class="container">
   <div class="row">
     <div *ngFor="let x of getWorkouts()" class="form-group col-sm-2">
       <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white"
            routerLink="./program">
+        <div class="card-body">
+          <a href="#" class="btn btn-block text-white" routerLink="/program"><b>Day {{x.Id}}</b></a>
+        </div>
+      </div>
+      <div *ngIf="x.IsComplete === false" class="card shadow rounded " routerLink="./program">
+        <div class="card-body">
+          <a href="#" class="btn btn-block text-primary" routerLink="/program"><b>Day {{x.Id}}</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let x of getWorkouts()" class="form-group col-sm-2">
+      <div *ngIf="x.IsComplete === true" class="card shadow bg-primary rounded text-white" routerLink="./program">
         <div class="card-body">
           <a href="#" class="btn btn-block text-white" routerLink="/program"><b>Day {{x.Id}}</b></a>
         </div>
