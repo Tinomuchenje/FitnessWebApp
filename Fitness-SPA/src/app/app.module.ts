@@ -10,6 +10,7 @@ import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -74,6 +75,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
       AngularFireModule,
+      AngularFirestoreModule ,
       NgbModule,
    ],
    providers: [
