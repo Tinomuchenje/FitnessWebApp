@@ -19,12 +19,8 @@
             Home Workouts Are Included In This Program.</p>
     </div>
     <br>
-    <div class="row featurette" *ngIf="this.formData.isMale">
-        <div class="col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item " [src]="(this.videoUrl) | safeurl" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="row featurette" *ngIf="this.formData.isFemale">
+
+    <div class="row featurette">
         <div class=" col-sm shadow p-3 mb-5 bg-white rounded embed-responsive embed-responsive-16by9 ">
             <iframe class="embed-responsive-item " [src]="(this.videoUrl) | safeurl" allowfullscreen></iframe>
         </div>

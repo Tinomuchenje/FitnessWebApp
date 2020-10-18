@@ -75,7 +75,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       RouterModule.forRoot(appRoutes),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
       AngularFireModule,
-      AngularFirestoreModule ,
+      AngularFirestoreModule,
       NgbModule,
    ],
    providers: [
